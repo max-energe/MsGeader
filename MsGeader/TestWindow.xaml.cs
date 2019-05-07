@@ -21,9 +21,9 @@ namespace MsGeader
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class TestWindow : Window
     {
-        public MainWindow()
+        public TestWindow()
         {
             InitializeComponent();
         }

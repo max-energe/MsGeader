@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsGeader", "MsGeader\MsGeader.csproj", "{4F168898-114D-4EDA-9AC8-D4D43A153146}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender", "MsGeader\MailSender.csproj", "{4F168898-114D-4EDA-9AC8-D4D43A153146}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F8D0D683-B4BD-4611-A2C7-B08DC65C31F4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender.ConsoleTest", "MailSender.ConsoleTest\MailSender.ConsoleTest.csproj", "{DDE6062A-B605-4EEF-9960-518AB64B7CA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender.lib", "MailSender.lib\MailSender.lib.csproj", "{8E2CC9CF-C5DB-441F-8F5F-DE1974BEB212}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{DDE6062A-B605-4EEF-9960-518AB64B7CA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDE6062A-B605-4EEF-9960-518AB64B7CA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDE6062A-B605-4EEF-9960-518AB64B7CA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E2CC9CF-C5DB-441F-8F5F-DE1974BEB212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E2CC9CF-C5DB-441F-8F5F-DE1974BEB212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E2CC9CF-C5DB-441F-8F5F-DE1974BEB212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E2CC9CF-C5DB-441F-8F5F-DE1974BEB212}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
