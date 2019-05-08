@@ -1,0 +1,39 @@
+﻿<Window x:Class="MsGeader.TestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MsGeader"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="292*"/>
+        </Grid.RowDefinitions>
+        <Canvas Grid.Column="0">
+            <TextBlock Grid.Column="0" Canvas.Left="5" Canvas.Top="5" Foreground="#FFA49999" FontSize="13" >От кого</TextBlock>
+            <TextBlock Grid.Column="0" Canvas.Left="5" Canvas.Top="30" Foreground="#FFA49999" FontSize="13" >Кому</TextBlock>
+            
+            <TextBlock Grid.Column="0" Canvas.Left="5" Canvas.Top="70" Foreground="#FFA49999" FontSize="15" >Тема</TextBlock>
+        </Canvas>
+        <TextBox Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="1" Name="tbMessegeBody"></TextBox>
+        <Canvas Grid.Column="1">
+            <TextBox Width="350" Canvas.Left="5" Canvas.Top="5" Name="UserNameEdit"/>
+            <TextBox Width="350" Canvas.Left="5" Canvas.Top="30" Name="UserNameTo"/>
+            <TextBox Width="625" Canvas.Left="5" Canvas.Top="70" Name="tbMassageSubject"/>
+            <TextBlock Grid.Column="1" Canvas.Left="380" Canvas.Top="5" Foreground="#FFA49999" FontSize="13" > Пароль </TextBlock>
+            <PasswordBox Name  ="PasswordBoxEdit" Canvas.Left="480" Canvas.Top="5" Width="150" />
+            <TextBlock Grid.Column="1" Canvas.Left="380" Canvas.Top="30" Foreground="#FFA49999" FontSize="13" >smtp-server</TextBlock>
+            <TextBlock Grid.Column="1" Canvas.Left="480" Canvas.Top="30" Foreground="#FFA49999" FontSize="13" Name="smtpName" Width="150"/>
+            <Button Content="Отправить" Canvas.Right="5" Canvas.Bottom="5" Width="100" Padding="3" Click="btnSendEmail_Click"/>
+
+        </Canvas>
+
+
+    </Grid>
+</Window>
