@@ -21,56 +21,51 @@ namespace MsGeader
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
+
+
     public partial class TestWindow : Window
     {
+        Dictionary<string, int> smtpBase;// Создание элемент класса (ключ/значение)
+        Dictionary<string, string> smtpBaseAdress;
         public TestWindow()
         {
             InitializeComponent();
+            smtpBase = new Dictionary<string, int>();
+            smtpBaseAdress = new Dictionary<string, string>();
         }
+
+        
+        private string smtpShort()
+        {
+            var user_nameTo = UserNameTo.Text;
+            var poz = user_nameTo.IndexOf('@') + 1;
+            string MailAdress = user_nameTo.Substring(poz);
+            smtpBase.Clear();
+            smtpBase.Add("yandex.ru",25);
+            smtpBase.Add("mail.ru", 25);
+            smtpBaseAdress.Clear();
+            smtpBaseAdress.Add("yandex.ru", "smtp.yandex.ru");
+            
+            return MailAdress;
+        }
+
+        private void errorEx(string error)
+        {
+            TestMassageError tmerror = new TestMassageError(error);
+            
+            tmerror.ShowDialog();
+            //MessageBox.Show("Невозможно отправить письмо " + error);
+        }
+
+        
+
 
         private void btnSendEmail_Click(object sender, RoutedEventArgs e)
         {
-            var user_name = UserNameEdit.Text;
-            var password = PasswordBoxEdit.SecurePassword;
-
-            try
-            {
-                using (var client = new SmtpClient("smtp.yandex.ru", 25))
-                {
-                    client.EnableSsl = true; //efefef
-                    //client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    client.UseDefaultCredentials = false;
-                    client.Credentials = new NetworkCredential(user_name, password);
-                    //client.Timeout = 100; // Устанавливаем срок на отправку данных к серверу
-                    using (var msg = new MailMessage("max-energe@yandex.ru", "cad-exs.m@yandex.ru"))
-                    {
-                        msg.Subject = $"Заголовок сообщения {DateTime.Now}";
-                        msg.Body = $"Тело сообщения {DateTime.Now}";
-                        msg.IsBodyHtml = false; // Не используем html в теле письма
-
-                        try
-                        {
-                            client.Send(msg);
-                            MessageBox.Show("Почта отправлена");
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Невозможно отправить письмо " + ex.ToString());
-                        }                                                
-                    }
-
-                }
-                
-            }
-
-            catch(Exception error)
-            {
-                MessageBox.Show(
-                    error.Message,
-                    "Ошибка в процессе отправки почты!",
-                    MessageBoxButton.OK, MessageBoxImage.Error);
-
-            }
+            
+            SendMessege();
         }
+
+        
     }
 }

@@ -7,13 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="177,132,0,0" TextWrapping="Wrap" Text="Имя пользователя" VerticalAlignment="Top"/>
-        <TextBox x:Name="UserNameEdit" HorizontalAlignment="Left"  Height="23" Margin="143,159,0,0" TextWrapping="Wrap" Text="max-energe@yandex.ru" VerticalAlignment="Top" Width="153"/>
-        <Label Content="Пароль" HorizontalAlignment="Left" Margin="396,128,0,0" VerticalAlignment="Top"/>
-        <PasswordBox x:Name  ="PasswordBoxEdit" HorizontalAlignment="Left" Margin="396,159,0,0" VerticalAlignment="Top" Width="213" Height="23" />
-        <Button Content="Отправить письмо" HorizontalAlignment="Left" Margin="317,250,0,0" VerticalAlignment="Top"
-                Width="150" Height="60"
-                Click="btnSendEmail_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="292*"/>
+        </Grid.RowDefinitions>
+        <Canvas Grid.Column="0">
+            <TextBlock Grid.Column="0" Canvas.Left="5" Canvas.Top="5" Foreground="#FFA49999" FontSize="13" >От кого</TextBlock>
+            <TextBlock Grid.Column="0" Canvas.Left="5" Canvas.Top="30" Foreground="#FFA49999" FontSize="13" >Кому</TextBlock>
+            
+            <TextBlock Grid.Column="0" Canvas.Left="5" Canvas.Top="70" Foreground="#FFA49999" FontSize="15" >Тема</TextBlock>
+        </Canvas>
+        <TextBox Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="1" Name="tbMessegeBody"></TextBox>
+        <Canvas Grid.Column="1">
+            <TextBox Width="350" Canvas.Left="5" Canvas.Top="5" Name="UserNameEdit"/>
+            <TextBox Width="350" Canvas.Left="5" Canvas.Top="30" Name="UserNameTo"/>
+            <TextBox Width="625" Canvas.Left="5" Canvas.Top="70" Name="tbMassageSubject"/>
+            <TextBlock Grid.Column="1" Canvas.Left="380" Canvas.Top="5" Foreground="#FFA49999" FontSize="13" > Пароль </TextBlock>
+            <PasswordBox Name  ="PasswordBoxEdit" Canvas.Left="480" Canvas.Top="5" Width="150" />
+            <TextBlock Grid.Column="1" Canvas.Left="380" Canvas.Top="30" Foreground="#FFA49999" FontSize="13" >smtp-server</TextBlock>
+            <TextBlock Grid.Column="1" Canvas.Left="480" Canvas.Top="30" Foreground="#FFA49999" FontSize="13" Name="smtpName" Width="150"/>
+            <Button Content="Отправить" Canvas.Right="5" Canvas.Bottom="5" Width="100" Padding="3" Click="btnSendEmail_Click"/>
+
+        </Canvas>
+
 
     </Grid>
 </Window>

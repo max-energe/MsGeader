@@ -69,8 +69,8 @@
                     <TabItem Header="Canvas">
                         <Canvas>
                             <Button Content="Button"
-                                    Canvas.Left="351"
-                                    Canvas.Top="141"
+                                    Canvas.Left="97"
+                                    Canvas.Top="58"
                                     Width="75"/>
                             <TextBox Canvas.Left="50" Canvas.Top="35">
                                 А я из Canvas
